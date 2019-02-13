@@ -78,7 +78,7 @@ def proxy_exact_request(environ, start_response):
         body = environ['wsgi.input']
     else:
         body = ''
-    headers['Content-Length'] = content_length
+    headers['Content-Length'] = str(content_length)
     if environ.get('CONTENT_TYPE'):
         headers['Content-Type'] = environ['CONTENT_TYPE']
     if not path.startswith("/"):
